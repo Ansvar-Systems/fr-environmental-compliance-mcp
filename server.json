@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Ansvar-Systems/uk-environmental-compliance",
+  "description": "UK environmental compliance for farming \u2014 NVZ rules, spreading windows, SSAFO",
+  "repository": {
+    "url": "https://github.com/Ansvar-Systems/uk-environmental-compliance-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.ansvar.eu/uk-environmental-compliance/mcp"
+    }
+  ]
+}
