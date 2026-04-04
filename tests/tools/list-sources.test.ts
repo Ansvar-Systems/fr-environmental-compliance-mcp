@@ -17,9 +17,9 @@ describe('list_sources tool', () => {
     if (existsSync(TEST_DB)) unlinkSync(TEST_DB);
   });
 
-  test('returns 5 data sources', () => {
+  test('returns 6 data sources', () => {
     const result = handleListSources(db);
-    expect(result.sources).toHaveLength(5);
+    expect(result.sources).toHaveLength(6);
   });
 
   test('each source has required fields', () => {

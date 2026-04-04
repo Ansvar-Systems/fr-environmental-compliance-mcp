@@ -18,16 +18,16 @@ describe('get_storage_requirements tool', () => {
     if (existsSync(TEST_DB)) unlinkSync(TEST_DB);
   });
 
-  test('returns requirements for slurry', () => {
-    const result = handleGetStorageRequirements(db, { material: 'slurry' });
+  test('returns requirements for lisier', () => {
+    const result = handleGetStorageRequirements(db, { material: 'lisier' });
     expect(result).toHaveProperty('requirements');
     const typed = result as { requirements: Array<{ min_capacity_months: number }> };
     expect(typed.requirements.length).toBeGreaterThan(0);
     expect(typed.requirements[0].min_capacity_months).toBe(6);
   });
 
-  test('returns requirements for fuel oil', () => {
-    const result = handleGetStorageRequirements(db, { material: 'fuel' });
+  test('returns requirements for carburant', () => {
+    const result = handleGetStorageRequirements(db, { material: 'carburant' });
     expect(result).toHaveProperty('requirements');
     const typed = result as { requirements: Array<{ material: string }> };
     expect(typed.requirements.length).toBeGreaterThan(0);
@@ -39,7 +39,7 @@ describe('get_storage_requirements tool', () => {
   });
 
   test('rejects unsupported jurisdiction', () => {
-    const result = handleGetStorageRequirements(db, { material: 'slurry', jurisdiction: 'US' });
+    const result = handleGetStorageRequirements(db, { material: 'lisier', jurisdiction: 'US' });
     expect(result).toHaveProperty('error', 'jurisdiction_not_supported');
   });
 });

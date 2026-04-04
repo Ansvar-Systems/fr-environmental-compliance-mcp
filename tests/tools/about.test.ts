@@ -4,9 +4,9 @@ import { handleAbout } from '../../src/tools/about.js';
 describe('about tool', () => {
   test('returns server metadata', () => {
     const result = handleAbout();
-    expect(result.name).toBe('UK Environmental Compliance MCP');
-    expect(result.description).toContain('NVZ');
-    expect(result.jurisdiction).toEqual(['GB']);
+    expect(result.name).toBe('France Environmental Compliance MCP');
+    expect(result.description).toContain('ICPE');
+    expect(result.jurisdiction).toEqual(['FR']);
     expect(result.tools_count).toBe(11);
     expect(result.links).toHaveProperty('homepage');
     expect(result._meta).toHaveProperty('disclaimer');

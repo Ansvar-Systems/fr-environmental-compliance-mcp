@@ -1,0 +1,35 @@
+{
+  "mcp_name": "France Environmental Compliance MCP",
+  "jurisdiction": "FR",
+  "build_date": "2026-04-04",
+  "status": "populated",
+  "record_counts": {
+    "nvz_rules": 24,
+    "storage_requirements": 10,
+    "buffer_strip_rules": 10,
+    "abstraction_rules": 13,
+    "pollution_prevention": 10,
+    "eia_screening": 14,
+    "search_index": 72,
+    "total_structured": 81
+  },
+  "data_sources": [
+    "Code de l'environnement (Livre V -- ICPE)",
+    "Nomenclature ICPE (rubriques 2101, 2102, 2111, 2160)",
+    "Directive Nitrates 91/676/CEE",
+    "7eme programme d'actions national nitrates (PAN 7)",
+    "Arrete du 19 decembre 2011 (programmes d'actions nitrates)",
+    "Arrete du 27 decembre 2013 (prescriptions generales ICPE elevage)",
+    "Arrete du 4 mai 2017 modifie (ZNT, produits phytopharmaceutiques)",
+    "Decret 2019-1500 du 27 decembre 2019 (ZNT habitations)",
+    "BCAE 4 conditionnalite PAC (bandes tampon)",
+    "Loi sur l'eau -- nomenclature IOTA",
+    "Code rural L. 253-1 a L. 253-17 (produits phytopharmaceutiques)",
+    "Code de la sante publique L. 1321-2 (captages AEP)",
+    "Code de l'evaluation environnementale R. 122-2",
+    "Directive IED 2010/75/UE (elevages industriels)",
+    "Directive NEC 2016/2284/UE (emissions atmospheriques)",
+    "SDAGE des 6 Agences de l'Eau",
+    "Reglement CE 1107/2009 (produits phytopharmaceutiques)"
+  ]
+}

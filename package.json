@@ -1,7 +1,7 @@
 {
   "name": "@ansvar/fr-environmental-compliance-mcp",
   "version": "0.1.0",
-  "description": "UK environmental compliance for farming via MCP — NVZ rules, spreading windows, SSAFO storage, buffer strips, abstraction",
+  "description": "France environmental compliance for farming via MCP — ICPE nomenclature, calendrier epandage, stockage effluents, bandes tampon, ZNT, IOTA, Agences de l'Eau",
   "type": "module",
   "main": "dist/server.js",
   "bin": {
@@ -22,7 +22,7 @@
     "freshness:check": "tsx scripts/check-freshness.ts",
     "coverage:update": "tsx scripts/update-coverage.ts"
   },
-  "keywords": ["mcp", "environment", "nvz", "nitrates", "slurry", "farming", "compliance"],
+  "keywords": ["mcp", "environment", "icpe", "nitrates", "epandage", "farming", "compliance", "france"],
   "author": "Ansvar Systems <info@ansvar.eu>",
   "license": "Apache-2.0",
   "repository": {

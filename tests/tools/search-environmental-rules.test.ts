@@ -18,14 +18,14 @@ describe('search_environmental_rules tool', () => {
     if (existsSync(TEST_DB)) unlinkSync(TEST_DB);
   });
 
-  test('returns results for slurry query', () => {
-    const result = handleSearchEnvironmentalRules(db, { query: 'slurry' });
+  test('returns results for lisier query', () => {
+    const result = handleSearchEnvironmentalRules(db, { query: 'lisier' });
     expect(result).toHaveProperty('results_count');
     expect((result as { results_count: number }).results_count).toBeGreaterThan(0);
   });
 
   test('respects topic filter', () => {
-    const result = handleSearchEnvironmentalRules(db, { query: 'slurry', topic: 'nvz' });
+    const result = handleSearchEnvironmentalRules(db, { query: 'lisier', topic: 'nvz' });
     const typed = result as { results: Array<{ topic: string }> };
     expect(typed.results.length).toBeGreaterThan(0);
     for (const r of typed.results) {
@@ -34,18 +34,18 @@ describe('search_environmental_rules tool', () => {
   });
 
   test('rejects unsupported jurisdiction', () => {
-    const result = handleSearchEnvironmentalRules(db, { query: 'slurry', jurisdiction: 'FR' });
+    const result = handleSearchEnvironmentalRules(db, { query: 'lisier', jurisdiction: 'GB' });
     expect(result).toHaveProperty('error', 'jurisdiction_not_supported');
   });
 
   test('returns results for storage query', () => {
-    const result = handleSearchEnvironmentalRules(db, { query: 'storage tank' });
+    const result = handleSearchEnvironmentalRules(db, { query: 'stockage fosse' });
     expect(result).toHaveProperty('results_count');
     expect((result as { results_count: number }).results_count).toBeGreaterThan(0);
   });
 
-  test('returns results for silage query', () => {
-    const result = handleSearchEnvironmentalRules(db, { query: 'silage effluent' });
+  test('returns results for bande tampon query', () => {
+    const result = handleSearchEnvironmentalRules(db, { query: 'bande tampon' });
     expect(result).toHaveProperty('results_count');
     expect((result as { results_count: number }).results_count).toBeGreaterThan(0);
   });
