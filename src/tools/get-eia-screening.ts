@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -60,6 +61,13 @@ export function handleGetEiaScreening(db: Database, args: EiaArgs) {
     jurisdiction: jv.jurisdiction,
     results_count: annotatedResults.length,
     screenings: annotatedResults,
+    _citation: buildCitation(
+      `EIA screening: ${args.project_type}`,
+      `EIA screening — ${args.project_type} (FR)`,
+      'get_eia_screening',
+      { project_type: args.project_type },
+      'https://www.gov.uk/guidance/environmental-impact-assessments-for-agriculture',
+    ),
     _meta: buildMeta({
       source_url: 'https://www.gov.uk/guidance/environmental-impact-assessments-for-agriculture',
     }),

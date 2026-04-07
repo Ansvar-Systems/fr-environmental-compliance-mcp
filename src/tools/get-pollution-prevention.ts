@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -43,6 +44,13 @@ export function handleGetPollutionPrevention(db: Database, args: PollutionPreven
       regulatory_requirements: r.regulatory_requirements,
       regulation_ref: r.regulation_ref,
     })),
+    _citation: buildCitation(
+      `Pollution prevention: ${args.activity}`,
+      `Pollution prevention guidance — ${args.activity} (FR)`,
+      'get_pollution_prevention',
+      { activity: args.activity },
+      'https://www.gov.uk/guidance/pollution-prevention-for-businesses',
+    ),
     _meta: buildMeta({
       source_url: 'https://www.gov.uk/guidance/pollution-prevention-for-businesses',
     }),

@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -68,6 +69,13 @@ export function handleGetAbstractionRules(db: Database, args: AbstractionArgs) {
     jurisdiction: jv.jurisdiction,
     results_count: annotatedResults.length,
     rules: annotatedResults,
+    _citation: buildCitation(
+      `Abstraction rules: ${args.source_type ?? 'all'}`,
+      `Water abstraction rules — ${args.source_type ?? 'all'} (FR)`,
+      'get_abstraction_rules',
+      { source_type: args.source_type ?? 'all' },
+      'https://www.gov.uk/guidance/water-management-abstract-or-impound-water',
+    ),
     _meta: buildMeta({
       source_url: 'https://www.gov.uk/guidance/water-management-abstract-or-impound-water',
     }),

@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -46,6 +47,13 @@ export function handleGetStorageRequirements(db: Database, args: StorageArgs) {
       inspection_frequency: r.inspection_frequency,
       regulation_ref: r.regulation_ref,
     })),
+    _citation: buildCitation(
+      `Storage requirements: ${args.material}`,
+      `Storage requirements — ${args.material} (FR)`,
+      'get_storage_requirements',
+      { material: args.material },
+      'https://www.gov.uk/guidance/storing-silage-slurry-and-agricultural-fuel-oil',
+    ),
     _meta: buildMeta({
       source_url: 'https://www.gov.uk/guidance/storing-silage-slurry-and-agricultural-fuel-oil',
     }),
