@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -108,6 +109,13 @@ function formatSpreadingWindows(
     ...(broadMatch ? { note: `No exact match for land type '${args.land_type}'. Showing all rules for '${args.manure_type}'.` } : {}),
     results_count: windows.length,
     windows,
+    _citation: buildCitation(
+      `Spreading windows: ${args.manure_type}`,
+      `Spreading windows — ${args.manure_type} on ${args.land_type} (FR)`,
+      'get_spreading_windows',
+      { manure_type: args.manure_type, land_type: args.land_type },
+      'https://www.gov.uk/guidance/using-nitrogen-fertilisers-in-nitrate-vulnerable-zones',
+    ),
     _meta: buildMeta({
       source_url: 'https://www.gov.uk/guidance/using-nitrogen-fertilisers-in-nitrate-vulnerable-zones',
     }),
